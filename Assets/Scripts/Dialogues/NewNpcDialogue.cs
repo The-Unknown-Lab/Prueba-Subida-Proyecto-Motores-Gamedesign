@@ -1,0 +1,80 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+using TMPro;
+public class NewNpcDialogue : MonoBehaviour, IInteractuable
+{
+    [SerializeField] private TextMeshProUGUI textComponent;
+    [SerializeField] private GameObject dialogueBox;
+    [SerializeField] private List<string> lines;
+    private float textSpeed = 0.03f;
+    private bool onDialogue;
+
+    private int index;
+
+    private void Awake()
+    {
+        onDialogue = false;
+    }
+    public void OnInteract()
+    {
+        //lines = gameObject.GetComponent<IDialogue>().DialogueSelection();
+        DialogueManager.Instance.CanMoveNotify(false);
+        dialogueBox.SetActive(true);
+        onDialogue = true;
+        textComponent.text = string.Empty;
+        StartDialogue();
+
+    }
+
+    void Update()
+    {
+        if (onDialogue)
+        {
+            if (Input.GetKeyDown(KeyCode.Return) || Input.GetKeyDown(KeyCode.E) || Input.GetKeyDown(KeyCode.Mouse0))
+            {
+                if (textComponent.text == lines[index])
+                {
+                    NextLine();
+                }
+                else
+                {
+                    StopAllCoroutines();
+                    textComponent.text = lines[index];
+                }
+            }
+        }
+    }
+
+    void StartDialogue()
+    {
+        index = 0;
+        StartCoroutine(TypeLine());
+    }
+
+    IEnumerator TypeLine()
+    {
+        foreach (char c in lines[index].ToCharArray())
+        {
+            textComponent.text += c;
+            yield return new WaitForSeconds(textSpeed);
+        }
+    }
+
+    void NextLine()
+    {
+        if (index < lines.Count - 1)
+        {
+            index++;
+            textComponent.text = string.Empty;
+            StartCoroutine(TypeLine());
+        }
+        else
+        {
+            onDialogue = false;
+            DialogueManager.Instance.CanMoveNotify(true);
+            dialogueBox.SetActive(false);
+        }
+    }
+
+}
