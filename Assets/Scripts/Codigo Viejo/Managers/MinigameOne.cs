@@ -23,7 +23,7 @@ public class MinigameOne : MonoBehaviour
         else
             Destroy(gameObject);
 
-        gameObject.GetComponent<V2NewNpcDialogue1>().OnInteract(gameObject.GetComponent<IDialogue>(), 0);
+        gameObject.GetComponent<V2NewNpcDialogue1>().OnInteract(gameObject.GetComponent<IDialogue>(), new int[] {0,2,5});
     }
 
 

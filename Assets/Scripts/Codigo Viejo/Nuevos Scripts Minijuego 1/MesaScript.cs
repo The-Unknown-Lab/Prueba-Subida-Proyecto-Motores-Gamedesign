@@ -78,7 +78,7 @@ public class MesaScript : MonoBehaviour, IInteractuable
                 platosObj[id] = MinigameOne.Instance.PlatoEnManoObj;
                 platosObj[id].transform.position = UI[id].transform.position;
                 clickID[id] = MinigameOne.Instance.DejarPlato();
-                MinigameOne.Instance.gameObject.GetComponent<V2NewNpcDialogue1>().OnInteract(gameObject.GetComponent<IDialogue>(), 10 + clickID[id]);
+                MinigameOne.Instance.gameObject.GetComponent<V2NewNpcDialogue1>().OnInteract(MinigameOneDialogues.Instance.gameObject.GetComponent<IDialogue>(), new int[] {clickID[id] });
                 Debug.Log("Funciono el lugar " + id);
                 Debug.Log(("Objetos guardados: ") + clickID[id]);
                 ContarItems();
@@ -113,7 +113,7 @@ public class MesaScript : MonoBehaviour, IInteractuable
                 if (clickID[id] > 0 && id < lugares.Count - 2) //Comer plato
                 {
                     MinigameOne.Instance.TomarPlato(platosObj[id], clickID[id]);
-                    MinigameOne.Instance.gameObject.GetComponent<V2NewNpcDialogue1>().OnInteract(gameObject.GetComponent<IDialogue>(), 5 + clickID[id]);
+                    //MinigameOne.Instance.gameObject.GetComponent<V2NewNpcDialogue1>().OnInteract(gameObject.GetComponent<IDialogue>(), 5 + clickID[id]);
                     if (clickID[id] == 4)
                     {
                         MinigameOne.Instance.EndMinigame(2);
@@ -135,7 +135,7 @@ public class MesaScript : MonoBehaviour, IInteractuable
                 }
                 else if (id == lugares.Count - 1)
                 {
-                    MinigameOne.Instance.gameObject.GetComponent<V2NewNpcDialogue1>().OnInteract(this.gameObject.GetComponent<IDialogue>(), 0);
+                    //MinigameOne.Instance.gameObject.GetComponent<V2NewNpcDialogue1>().OnInteract(this.gameObject.GetComponent<IDialogue>(), 0);
                     Debug.Log("Hablar");
                 }
                 else
@@ -156,7 +156,7 @@ public class MesaScript : MonoBehaviour, IInteractuable
                 if (clickID[id] > 0 && id < lugares.Count - 2) //Tomar platos
                 {
                     MinigameOne.Instance.TomarPlato(platosObj[id], clickID[id]);
-                    MinigameOne.Instance.gameObject.GetComponent<V2NewNpcDialogue1>().OnInteract(gameObject.GetComponent<IDialogue>(), clickID[id]);
+                    //MinigameOne.Instance.gameObject.GetComponent<V2NewNpcDialogue1>().OnInteract(gameObject.GetComponent<IDialogue>(), clickID[id]);
                     clickID[id] = 0;
                     platosObj[id] = null;
                     Debug.Log("Tomo del lugar " + id);
@@ -172,7 +172,7 @@ public class MesaScript : MonoBehaviour, IInteractuable
                 }
                 else if (id == lugares.Count - 1)
                 {
-                    MinigameOne.Instance.gameObject.GetComponent<V2NewNpcDialogue1>().OnInteract(this.gameObject.GetComponent<IDialogue>(), 0);
+                    //MinigameOne.Instance.gameObject.GetComponent<V2NewNpcDialogue1>().OnInteract(this.gameObject.GetComponent<IDialogue>(), 0);
                     Debug.Log("Hablar");
 
                 }
@@ -196,7 +196,7 @@ public class MesaScript : MonoBehaviour, IInteractuable
             if (clickID[id] > 0 && id < lugares.Count - 2) //Tomar platos
             {
                 MinigameOne.Instance.TomarPlato(platosObj[id], clickID[id]);
-                MinigameOne.Instance.gameObject.GetComponent<V2NewNpcDialogue1>().OnInteract(gameObject.GetComponent<IDialogue>(), clickID[id]);
+                //MinigameOne.Instance.gameObject.GetComponent<V2NewNpcDialogue1>().OnInteract(gameObject.GetComponent<IDialogue>(), clickID[id]);
                 clickID[id] = 0;
                 platosObj[id] = null;
                 Debug.Log("Tomo del lugar " + id);
@@ -212,7 +212,7 @@ public class MesaScript : MonoBehaviour, IInteractuable
             }
             else if (id == lugares.Count - 1)
             {
-                MinigameOne.Instance.gameObject.GetComponent<V2NewNpcDialogue1>().OnInteract(this.gameObject.GetComponent<IDialogue>(), 0);
+                //MinigameOne.Instance.gameObject.GetComponent<V2NewNpcDialogue1>().OnInteract(this.gameObject.GetComponent<IDialogue>(), 0);
                 Debug.Log("Hablar");
 
             }

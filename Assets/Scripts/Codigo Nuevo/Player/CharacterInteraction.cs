@@ -44,7 +44,8 @@ public class CharacterInteraction : MonoBehaviour, ICanMove
         if (collision.GetComponent<IInteractuable>() != null)
         {
             interactable = null;
-            interactionBox.SetActive(false);
+            if (interactionBox != null)
+                interactionBox.SetActive(false);
         }
     }
 

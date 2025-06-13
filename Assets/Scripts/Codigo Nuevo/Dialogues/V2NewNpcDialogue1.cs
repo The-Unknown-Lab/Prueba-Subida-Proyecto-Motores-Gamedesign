@@ -18,11 +18,11 @@ public class V2NewNpcDialogue1 : MonoBehaviour, IInteractuable
 
     public void OnInteract()
     {
-        //Base
+        //base
     }
 
 
-    public void OnInteract(IDialogue dialogue, int dialogID)
+    public void OnInteract(IDialogue dialogue, int[] dialogID)
     {
         textComponent.text = string.Empty;
         lines = dialogue.DialogueSelection(dialogID);

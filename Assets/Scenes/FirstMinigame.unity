@@ -1002,6 +1002,7 @@ MonoBehaviour:
   - Plato 3 comido
   ComesPlato4:
   - Plato 4 comido
+  actualDialogue: []
 --- !u!4 &161932305 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8113693610420375689, guid: 60c2d89076422814d9ed1ac6a098f65d, type: 3}
@@ -1434,6 +1435,7 @@ MonoBehaviour:
   ComesPlato2: []
   ComesPlato3: []
   ComesPlato4: []
+  actualDialogue: []
 --- !u!1 &209768364
 GameObject:
   m_ObjectHideFlags: 0
@@ -1766,6 +1768,7 @@ MonoBehaviour:
   ComesPlato2: []
   ComesPlato3: []
   ComesPlato4: []
+  actualDialogue: []
 --- !u!61 &221798152
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -3908,7 +3911,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &537554090
 Transform:
   m_ObjectHideFlags: 0
@@ -8005,7 +8008,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1402579894}
   - component: {fileID: 1402579893}
-  - component: {fileID: 1402579892}
   - component: {fileID: 1402579895}
   - component: {fileID: 1402579896}
   m_Layer: 0
@@ -8015,43 +8017,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1402579892
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1402579890}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7c9b49649402f0f4d895fbc65839e935, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Default: []
-  Dialogo1:
-  - "\u2014 \xBFEl cuaderno del sommelier? "
-  - "\u2014 Descripciones de vinos, recomendaciones\u2026 "
-  - "\u2014 Parece haber una p\xE1gina marcada con algo escrito. "
-  - "\u2014 \u201CRojo, el color del amor y la advertencia\u201D. "
-  - "\u2014 \u201CAzul es neutral. Verde, confunde. Blanco, enga\xF1a.\u201D"
-  - "Gast\xF3n: \xBFRojo = amor y advertencia? Puede ser una trampa. "
-  - "Javier: Yo creo que es el blanco. \u201CEnga\xF1a\u201D, dice ah\xED. "
-  - "Javier: Pero el azul\u2026 dice \u201Cneutral\u201D. \xBFY si es el \xFAnico
-    seguro? "
-  - "Andrea: \xBFBlanco? No creo\u2026 Tipo ser\xEDa muy obvio \xBFNo?"
-  Plato1: []
-  Plato2: []
-  Plato3: []
-  Plato4: []
-  DejarPlato: []
-  ComentarioPlato1: []
-  ComentarioPlato2: []
-  ComentarioPlato3: []
-  ComentarioPlato4: []
-  ComesPlato1: []
-  ComesPlato2: []
-  ComesPlato3: []
-  ComesPlato4: []
 --- !u!212 &1402579893
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -8176,7 +8141,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e68211abfd6273a468a6d545e6674285, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  index: 0
 --- !u!1 &1488822464
 GameObject:
   m_ObjectHideFlags: 0
@@ -8952,6 +8916,7 @@ MonoBehaviour:
   ComesPlato2: []
   ComesPlato3: []
   ComesPlato4: []
+  actualDialogue: []
 --- !u!114 &1596295144
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11059,6 +11024,7 @@ MonoBehaviour:
   ComesPlato2: []
   ComesPlato3: []
   ComesPlato4: []
+  actualDialogue: []
 --- !u!1 &1941202138
 GameObject:
   m_ObjectHideFlags: 0
@@ -12066,6 +12032,7 @@ MonoBehaviour:
   ComesPlato2: []
   ComesPlato3: []
   ComesPlato4: []
+  actualDialogue: []
 --- !u!1 &2048293838 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1987053666335587387, guid: 52f47d1c98df1d24c87edc40d51d03a9, type: 3}
@@ -12146,39 +12113,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 2052966900}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7c9b49649402f0f4d895fbc65839e935, type: 3}
+  m_Script: {fileID: 11500000, guid: a4e03d4f6f79a3b498bd5549798d2165, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Default: []
-  Dialogo1:
-  - "(Al entrar al edificio tu celular comienza a emitir un extra\xF1o sonido)"
-  - "Voz Misteriosa: Bienvenidos al Desaf\xEDo: \u201CLa Verdad de la Milanesa\u201D."
-  - 'Dificultad: La Caminata. '
-  - 'Participantes: Cuatro. '
-  - "Roles: Uno ser\xE1 camarero, tres ser\xE1n comensales. "
-  - "Recompensa: 2 D\xEDas"
-  - 'Reglas: '
-  - "\u2014 Dos rondas."
-  - " \u2014 En cada ronda, un plato est\xE1 contaminado con una sustancia letal. "
-  - "\u2014 El camarero elige y sirve.  "
-  - "\u2014 Los comensales deben comer lo asignado, pero pueden hablar con el camarero. "
-  - "\u2014 Todos los jugadores que lleguen a la segunda ronda, deben sobrevivir
-    para ganar el desaf\xEDo."
-  - "Advertencia: Rehusarse a participar o abandonar el lugar reduce el contador
-    de D\xEDas a cero."
-  Plato1: []
-  Plato2: []
-  Plato3: []
-  Plato4: []
-  DejarPlato: []
-  ComentarioPlato1: []
-  ComentarioPlato2: []
-  ComentarioPlato3: []
-  ComentarioPlato4: []
-  ComesPlato1: []
-  ComesPlato2: []
-  ComesPlato3: []
-  ComesPlato4: []
 --- !u!1 &2100868740
 GameObject:
   m_ObjectHideFlags: 0
@@ -12412,6 +12349,7 @@ MonoBehaviour:
   ComesPlato2: []
   ComesPlato3: []
   ComesPlato4: []
+  actualDialogue: []
 --- !u!114 &2112855279
 MonoBehaviour:
   m_ObjectHideFlags: 0
