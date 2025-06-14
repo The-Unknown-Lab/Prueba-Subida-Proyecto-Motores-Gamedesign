@@ -4,8 +4,9 @@ using UnityEngine;
 
 public class LibroScript : MonoBehaviour, IInteractuable
 {
+    [SerializeField] private int[] index;
     public void OnInteract()
     {
-        MinigameOne.Instance.gameObject.GetComponent<V2NewNpcDialogue1>().OnInteract(MinigameOneDialogues.Instance.gameObject.GetComponent<IDialogue>(), new int[] {3});
+        MinigameOne.Instance.gameObject.GetComponent<V2NewNpcDialogue1>().OnInteract(MinigameOneDialogues.Instance.gameObject.GetComponent<IDialogue>(), index);
     }
 }

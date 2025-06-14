@@ -38,14 +38,14 @@ public class MinigameOneDialogues : MonoBehaviour, IDialogue
     }
 
 
-    private void Dialogues()
+    protected virtual void Dialogues()
     {
         DialogueID[0] = "Hola";
         DialogueID[1] = "Adios";
         DialogueID[2] = "No lo se";
         DialogueID[3] = "ID 3";
         DialogueID[4] = "ID 4";
-        DialogueID[5] = "ID 5 \n Funciona?";
+        DialogueID[5] = "ID 5\nFunciona?";
     }
 
 
