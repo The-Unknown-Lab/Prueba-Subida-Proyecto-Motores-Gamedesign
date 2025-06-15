@@ -21,12 +21,10 @@ public class MesaScript : MonoBehaviour, IInteractuable
     private void Start()
     {
         clickID = new Dictionary<int,int>();
-        clickID[0] = 0;
-        clickID[1] = 0;
-        clickID[2] = 0;
-        clickID[3] = 0;
-        clickID[4] = 0;
-        clickID[5] = 0;
+        for (int i = 0; i < 5; i++)
+        {
+            clickID[i] = 0;
+        }
 
         for (int i = 0; i < platosObj.Length; i++)
         {
@@ -115,6 +113,40 @@ public class MesaScript : MonoBehaviour, IInteractuable
                 itemsInTable++;
             }
         }
+    }
+
+    public void ResetItems(GameObject[] newFoodObj)
+    {
+
+        for (int i = 0; i < platosObj.Length; i++)
+        {
+            if (platosObj[i] != null)
+            {
+                platosObj[i].transform.position = new Vector2(1000, 1000);
+                Destroy(platosObj[i]);
+            }
+        }
+
+        clickID.Clear();
+        for (int i = 0; i < 5; i++)
+        {
+            clickID[i] = 0;
+        }
+
+        for (int i = 0; i < newFoodObj.Length; i++)
+        {
+            if (newFoodObj[i] != null)
+            {
+                platosObj[i] = newFoodObj[i];
+                platosObj[i].SetActive(true);
+                platosObj[i].transform.position = lugares[i].transform.position;
+                clickID[i] = platosObj[i].GetComponent<ItemID>().ID;
+            }
+        }
+
+
+        ContarItems();
+
     }
 
     public void ActualizarTexto()

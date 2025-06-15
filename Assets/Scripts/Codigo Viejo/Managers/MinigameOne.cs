@@ -15,6 +15,9 @@ public class MinigameOne : MonoBehaviour
     [SerializeField] private int foodInTables;
     [SerializeField] private GameObject[] mesaObj;
 
+    [SerializeField] private int gameStage;
+    [SerializeField] private GameObject[] secondFood;
+
     private Dictionary<int, int> foodPlaces;
 
 
@@ -29,11 +32,12 @@ public class MinigameOne : MonoBehaviour
 
 
         foodPlaces = new Dictionary<int, int>();
-        foodPlaces[0] = 0;
-        foodPlaces[1] = 0;
-        foodPlaces[2] = 0;
+        for (int i = 0; i <= 2; i++)
+        {
+            foodPlaces[i] = 0;
+        }
 
-
+        gameStage = 0;
         gameObject.GetComponent<V2NewNpcDialogue1>().OnInteract(gameObject.GetComponent<IDialogue>(), new int[] {0,2,5});
     }
 
@@ -62,7 +66,6 @@ public class MinigameOne : MonoBehaviour
                 foodInTables--;
         }
         plato.SetActive(false);
-        Debug.Log(foodPlaces[0] + " " + foodPlaces[1] + " " + foodPlaces[2]);
     }
 
     public int DejarPlato(int lugarId, int mesaId)
@@ -84,7 +87,6 @@ public class MinigameOne : MonoBehaviour
                 foodInTables++;
 
         }
-        Debug.Log(foodPlaces[0] + " " + foodPlaces[1] + " " + foodPlaces[2]);
 
 
         platoEnManoID = 0;
@@ -95,24 +97,23 @@ public class MinigameOne : MonoBehaviour
 
     private void CheckMinigameStatus()
     {
-        if (foodInTables == foodPlaces.Count)
+        if (foodInTables == foodPlaces.Count && gameStage < 2)
         {
             if (Input.GetKeyDown(KeyCode.O))
             {
-                Debug.Log("Primera parte del minijuego Terminado" );
+                Debug.Log("Primera parte del minijuego Terminado");
 
                 for (int i = 0; i < foodPlaces.Count; i++)
                 {
                     if (foodPlaces[i] == 1)
                     {
-
+                        //Animacion Comer
                     }
                     else if (foodPlaces[i] == 2)
                     {
                         if (i == 2)
                         {
-                            Destroy(mesaObj[i].GetComponent<MesaScript>());
-                            
+                            mesaObj[i].GetComponent<MesaScript>().lugares.Remove(mesaObj[i].GetComponent<MesaScript>().lugares[0]);
                         }
                         else
                             mesaObj[1].GetComponent<MesaScript>().lugares.Remove(mesaObj[1].GetComponent<MesaScript>().lugares[i]);
@@ -120,7 +121,7 @@ public class MinigameOne : MonoBehaviour
                     }
 
                 }
-
+                gameStage++;
                 PlayEatAnimation();
             }
         }
@@ -128,6 +129,30 @@ public class MinigameOne : MonoBehaviour
 
     private void PlayEatAnimation()
     {
+        foodInTables = 0;
+        platoEnManoID = 0;
+        platoEnManoObject = null;
+
+        for (int i = 0;i < mesaObj.Length; i++)
+        {
+            if (mesaObj[i].GetComponent<MesaScript>() != null)
+            {
+                if (i == 0 && gameStage == 1)
+                    mesaObj[i].GetComponent<MesaScript>().ResetItems(secondFood);
+                else
+                    mesaObj[i].GetComponent<MesaScript>().ResetItems(new GameObject[] { null, null, null, null });
+            }
+        }
+
+        for (int i = 0; i < foodPlaces.Count; i++)
+        {
+            if (foodPlaces[i] != 3)
+                foodPlaces[i] = 0;
+            else if (foodPlaces[i] == 3)
+                foodInTables++;
+        }
+
+        gameObject.GetComponent<V2NewNpcDialogue1>().OnInteract(gameObject.GetComponent<IDialogue>(), new int[] { 0, 2, 5 });
 
     }
 
