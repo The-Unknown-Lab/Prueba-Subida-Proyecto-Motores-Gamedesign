@@ -13,7 +13,7 @@ public class MinigameOne : MonoBehaviour
     [SerializeField] private int platoEnManoID;
     [SerializeField] private GameObject platoEnManoObject;
     [SerializeField] private int foodInTables;
-    [SerializeField] private int[] jugadoresVivos;
+    [SerializeField] private GameObject[] mesaObj;
 
     private Dictionary<int, int> foodPlaces;
 
@@ -95,7 +95,7 @@ public class MinigameOne : MonoBehaviour
 
     private void CheckMinigameStatus()
     {
-        if (foodInTables == 3)
+        if (foodInTables == foodPlaces.Count)
         {
             if (Input.GetKeyDown(KeyCode.O))
             {
@@ -105,29 +105,40 @@ public class MinigameOne : MonoBehaviour
                 {
                     if (foodPlaces[i] == 1)
                     {
-                        jugadoresVivos[i] = foodPlaces[i];
-                        Debug.Log("La persona del lugar " + i + " sobrevivio");
+
                     }
-                    else
-                        Debug.Log("La persona del lugar " + i + " murio");
+                    else if (foodPlaces[i] == 2)
+                    {
+                        if (i == 2)
+                        {
+                            Destroy(mesaObj[i].GetComponent<MesaScript>());
+                            
+                        }
+                        else
+                            mesaObj[1].GetComponent<MesaScript>().lugares.Remove(mesaObj[1].GetComponent<MesaScript>().lugares[i]);
+                        foodPlaces[i] = 3;
+                    }
 
                 }
 
-                PlayAnimation();
-
-                InicializeSecondRound();
+                PlayEatAnimation();
             }
         }
     }
 
-    private void PlayAnimation()
+    private void PlayEatAnimation()
+    {
+
+    }
+
+    private void PlayDeathAnimation()
     {
 
     }
 
     private void InicializeSecondRound()
     {
-        Debug.Log("Inicia la segunda ronda del minijuego, quedaron vivos los jugaadores de los lugares " + jugadoresVivos);
+
     }
 
     public void EndMinigame(int id)

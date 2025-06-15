@@ -10,7 +10,7 @@ public class MesaScript : MonoBehaviour, IInteractuable
 {
     [SerializeField] private CinemachineVirtualCamera m_Camera;
     [SerializeField] private GameObject player;
-    [SerializeField] private List<GameObject> lugares;
+    [SerializeField] public List<GameObject> lugares;
     [SerializeField] private List<GameObject> UI;
     [SerializeField] private Dictionary<int,int> clickID;
     [SerializeField] private GameObject[] platosObj;

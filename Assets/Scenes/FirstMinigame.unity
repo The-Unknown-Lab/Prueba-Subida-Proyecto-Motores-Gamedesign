@@ -4321,7 +4321,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 96b10982a7ce28342aab3f0e45157688, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  id: 0
+  id: 5
   mesa: {fileID: 0}
 --- !u!1 &632794700
 GameObject:
@@ -4812,7 +4812,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 96b10982a7ce28342aab3f0e45157688, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  id: 0
+  id: 5
   mesa: {fileID: 0}
 --- !u!4 &782455943
 Transform:
@@ -5603,7 +5603,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 96b10982a7ce28342aab3f0e45157688, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  id: 0
+  id: 4
   mesa: {fileID: 0}
 --- !u!1 &858915803
 GameObject:
@@ -6669,7 +6669,7 @@ GameObject:
   - component: {fileID: 1045418971}
   - component: {fileID: 1045418970}
   m_Layer: 0
-  m_Name: LugarPlato 4
+  m_Name: LugarPlato 2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -6687,7 +6687,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 96b10982a7ce28342aab3f0e45157688, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  id: 0
+  id: 1
   mesa: {fileID: 0}
 --- !u!4 &1045418971
 Transform:
@@ -7878,6 +7878,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e68211abfd6273a468a6d545e6674285, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  index: 
 --- !u!1 &1488822464
 GameObject:
   m_ObjectHideFlags: 0
@@ -10030,7 +10031,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 96b10982a7ce28342aab3f0e45157688, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  id: 0
+  id: 5
   mesa: {fileID: 0}
 --- !u!4 &1855333285
 Transform:
@@ -11499,7 +11500,11 @@ MonoBehaviour:
   defeatScreen: {fileID: 173942771}
   platoEnManoID: 0
   platoEnManoObject: {fileID: 0}
-  mesas: {fileID: 0}
+  foodInTables: 0
+  mesaObj:
+  - {fileID: 143257954}
+  - {fileID: 1909209323}
+  - {fileID: 203566126}
 --- !u!4 &2052966902
 Transform:
   m_ObjectHideFlags: 0
@@ -11572,7 +11577,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 96b10982a7ce28342aab3f0e45157688, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  id: 0
+  id: 2
   mesa: {fileID: 0}
 --- !u!4 &2100868742
 Transform:
