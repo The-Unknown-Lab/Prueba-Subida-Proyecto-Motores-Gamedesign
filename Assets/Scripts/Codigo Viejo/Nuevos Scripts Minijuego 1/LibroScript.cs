@@ -7,6 +7,6 @@ public class LibroScript : MonoBehaviour, IInteractuable
     [SerializeField] private int[] index;
     public void OnInteract()
     {
-        MinigameOne.Instance.gameObject.GetComponent<V2NewNpcDialogue1>().OnInteract(MinigameOneDialogues.Instance.gameObject.GetComponent<IDialogue>(), index);
+        DialogueManager.Instance.gameObject.GetComponent<DialoguesManager>().OnInteract(MinigameOneDialogues.Instance.gameObject.GetComponent<IDialogue>(), index);
     }
 }

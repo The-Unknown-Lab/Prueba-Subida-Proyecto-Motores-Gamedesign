@@ -46,6 +46,13 @@ public class MinigameOneDialogues : MonoBehaviour, IDialogue
         DialogueID[3] = "ID 3";
         DialogueID[4] = "ID 4";
         DialogueID[5] = "ID 5\nFunciona?";
+
+        //Dialogos de muerte
+        DialogueID[10] = "Felicitaciones, Nadie murio esta ronda";
+        DialogueID[11] = "Mala suerte, murio el comensal numero 1";
+        DialogueID[12] = "Mala suerte, murio el comensal numero 2";
+        DialogueID[13] = "Mala suerte, murio el comensal numero 3";
+
     }
 
 

@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
-public class V2NewNpcDialogue1 : MonoBehaviour, IInteractuable
+public class DialoguesManager : MonoBehaviour, IInteractuable
 {
     [SerializeField] private TextMeshProUGUI textComponent;
     [SerializeField] private GameObject dialogueBox;

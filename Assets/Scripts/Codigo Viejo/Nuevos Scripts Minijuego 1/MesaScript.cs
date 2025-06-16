@@ -20,6 +20,7 @@ public class MesaScript : MonoBehaviour, IInteractuable
 
     private void Start()
     {
+
         clickID = new Dictionary<int,int>();
         for (int i = 0; i < 5; i++)
         {
@@ -36,7 +37,13 @@ public class MesaScript : MonoBehaviour, IInteractuable
             }
         }
 
-        ContarItems();
+        for (int i = 0; i < lugares.Count; i++)
+        {
+            lugares[i].GetComponent<PositionID>().SetID(i);
+        }
+
+
+            ContarItems();
     }
 
     public void OnInteract()
@@ -48,7 +55,6 @@ public class MesaScript : MonoBehaviour, IInteractuable
         {
             UI[i].SetActive(true);
             UI[i].transform.position = lugares[i].transform.position;
-            lugares[i].GetComponent<PositionID>().SetID(i);
             UI[i].GetComponent<PositionID>().SetScript(this);
             UI[i].GetComponent<PositionID>().SetID(i);
 
