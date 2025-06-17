@@ -4,7 +4,7 @@ using UnityEngine;
 using TMPro;
 public class DialoguesManager : MonoBehaviour, IInteractuable
 {
-    [SerializeField] private TextMeshProUGUI textComponent;
+    [SerializeField] private TextMeshProUGUI textComponent, nameDialogue;
     [SerializeField] private GameObject dialogueBox;
     [SerializeField] private List<string> lines;
     private float textSpeed = 0.03f;
@@ -22,13 +22,18 @@ public class DialoguesManager : MonoBehaviour, IInteractuable
     }
 
 
-    public void OnInteract(IDialogue dialogue, int[] dialogID)
+    public void OnInteract(IDialogue dialogue, int[] dialogID, string name)
     {
         textComponent.text = string.Empty;
         lines = dialogue.DialogueSelection(dialogID);
         dialogueBox.SetActive(true);
         DialogueManager.Instance.CanMoveNotify(false);
         onDialogue = true;
+        if (name != null)
+        {
+            nameDialogue.gameObject.SetActive(true);
+            nameDialogue.text = name;
+        }
         StartDialogue();
 
     }
@@ -80,6 +85,12 @@ public class DialoguesManager : MonoBehaviour, IInteractuable
         {
             onDialogue = false;
             dialogueBox.SetActive(false);
+            if (nameDialogue.gameObject.activeSelf)
+            {
+                nameDialogue.text = null;
+                nameDialogue.gameObject.SetActive(false);
+            }
+
             DialogueManager.Instance.CanMoveNotify(true);
         }
     }

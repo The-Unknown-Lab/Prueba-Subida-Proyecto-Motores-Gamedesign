@@ -3,14 +3,14 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class NPCsDialogueScript : MonoBehaviour, IInteractuable
+public class NpcsDialogueScript : MonoBehaviour, IInteractuable
 {
     [SerializeField] private string NpcName;
     [SerializeField] private int[] dialogueIndex;
 
     public void OnInteract()
     {
-        DialogueManager.Instance.gameObject.GetComponent<DialoguesManager>().OnInteract(MinigameOneDialogues.Instance.gameObject.GetComponent<IDialogue>(), dialogueIndex);
+        DialogueManager.Instance.gameObject.GetComponent<DialoguesManager>().OnInteract(DialogueManager.Instance.gameObject.GetComponent<IDialogue>(), dialogueIndex, NpcName);
     }
 
     public int[] SeeDialogueIndex()

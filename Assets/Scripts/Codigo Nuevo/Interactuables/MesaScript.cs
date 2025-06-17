@@ -16,7 +16,6 @@ public class MesaScript : MonoBehaviour, IInteractuable
     [SerializeField] private GameObject[] platosObj;
     [SerializeField] private int mesaId;
     [SerializeField] int itemsInTable;
-    private bool canMove = true;
 
     private void Start()
     {
