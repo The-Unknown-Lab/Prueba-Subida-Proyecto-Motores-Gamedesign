@@ -4,7 +4,7 @@ using UnityEngine;
 
 public interface IDialogue
 {
-    public List<string> DialogueSelection(int index)
+    public List<string> DialogueSelection(int[] IDs)
     {
         return new List<string>();
     }

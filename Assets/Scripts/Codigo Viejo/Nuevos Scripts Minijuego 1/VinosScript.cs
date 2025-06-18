@@ -18,8 +18,8 @@ public class VinosScript : MonoBehaviour, IInteractuable
             DialogueManager.Instance.CanMoveNotify2(true);
             vinosUI.SetActive(false);
         }
-        else
-            MinigameOne.Instance.gameObject.GetComponent<V2NewNpcDialogue1>().OnInteract(gameObject.GetComponent<IDialogue>(), id);
+        //else
+            //MinigameOne.Instance.gameObject.GetComponent<V2NewNpcDialogue1>().OnInteract(gameObject.GetComponent<IDialogue>(), id);
 
     }
 }
