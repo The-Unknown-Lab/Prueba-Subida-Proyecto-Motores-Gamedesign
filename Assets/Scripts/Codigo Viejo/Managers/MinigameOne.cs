@@ -18,7 +18,7 @@ public class MinigameOne : MonoBehaviour
     [SerializeField] private GameObject[] Npcs;
     [SerializeField] private CinemachineVirtualCamera m_Camera;
     [SerializeField] private GameObject roundButton, levelExit;
-    [SerializeField] private GameObject triggerSecondRound;
+    [SerializeField] private GameObject triggerSecondRound, wines;
 
     [SerializeField] private int platoEnManoID;
     [SerializeField] private int foodInTables;
@@ -77,6 +77,7 @@ public class MinigameOne : MonoBehaviour
                 foodInTables--;
         }
         plato.SetActive(false);
+
     }
 
     public int DejarPlato(int lugarId, int mesaId)
@@ -148,6 +149,7 @@ public class MinigameOne : MonoBehaviour
                 StartCoroutine(PlayAnimation(Npcs[i], "NpcDeath", val));
                 val += 3f;
                 totalCorrutines++;
+                Npcs[i].GetComponent<NpcsDialogueScript>().ChangeDialogueIndex(new int[] { 40 });
                 foodPlaces[i] = 3;
             }
 
@@ -230,6 +232,7 @@ public class MinigameOne : MonoBehaviour
             //Pasa a la siguiente ronda
             DialogueManager.Instance.gameObject.GetComponent<DialoguesManager>().OnInteract(DialogueManager.Instance.gameObject.GetComponent<IDialogue>(), new int[] { deathId, 3}, "Voz Misteriosa");
             triggerSecondRound.SetActive(true);
+            wines.SetActive(true);
         }
         else
         {

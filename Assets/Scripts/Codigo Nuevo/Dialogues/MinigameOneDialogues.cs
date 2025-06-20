@@ -43,7 +43,7 @@ public class MinigameOneDialogues : MonoBehaviour, IDialogue
         //Dialogos voz misteriosa
         DialogueID[0] = "Bienvenidos al Desafío: “La Verdad de la Milanesa”.\r\nDificultad: La Caminata.\r\nParticipantes: Cuatro.\r\nRoles: Uno será camarero, tres serán comensales.";
         DialogueID[1] = "Reglas:\r\n- Dos rondas.\r\n- En cada ronda, un plato está contaminado con una sustancia letal.\r\n- El camarero elige y sirve. \r\n- Los comensales deben comer lo asignado, pero pueden hablar con el camarero.\r\n- Todos los jugadores que lleguen a la segunda ronda, deben sobrevivir para ganar el desafío.";
-        DialogueID[2] = "Dialogo al acercarse a la mesa la primera vez";
+        DialogueID[2] = "Observación: \n• La picaña tiene un brillo más opaco en la grasa y parece recalentado.  Sospecho mas de este...\n• La entraña esta quemada por fuera.\n• El vacío tiene un olor ligeramente más metálico.\n• El bife ancho parece cocido de más, casi seco.";
         DialogueID[3] = "Muy bien, para esta ronda el camarero debera elegir nuevamente entre 4 platos de los cuales solo uno esta envenenado\nConsulta al sommelier con que vinos maridar";
         DialogueID[4] = "ID 4";
         DialogueID[5] = "ID 5\nFunciona?";
@@ -74,6 +74,23 @@ public class MinigameOneDialogues : MonoBehaviour, IDialogue
         DialogueID[33] = "Merlot:\n“El que brilla no siempre es oro, pero aveces si”";
         DialogueID[34] = "Chardonnay:\n“La comida no elige su plato, el veneno si”";
         DialogueID[35] = "Este vino no tiene nada interesante...";
+
+        //Dialogos Personajes
+        DialogueID[40] = "(Esta muerto)";
+        DialogueID[41] = "Eligue bien porfavor...";
+        DialogueID[42] = "Eligue bien...";
+        DialogueID[43] = "Gaston:\nRojo = amor y advertencia? Puede ser una trampa";
+        DialogueID[44] = "Javier:\nYo creo que es el blanco. “Engaña”, dice ahí.\nPero el azul… dice “neutral”. ¿Y si es el único seguro?";
+        DialogueID[45] = "Andrea:\n¿Blanco? No creo… Tipo sería muy obvio ¿No?";
+        DialogueID[46] = "Gastón:\nNo se ve nada ¿Hay alguna diferencia aparte de los platos?";
+        DialogueID[47] = "Andrea:\n¿Sommelier? ¡No hay nadie más aquí!";
+        DialogueID[48] = "Javier:\nSi no decides aun, revisa tu alrededor.";
+
+        //Dialogos platos
+        DialogueID[50] = "Plato bueno 1";
+        DialogueID[51] = "Plato bueno 2";
+        DialogueID[52] = "Plato bueno 3";
+        DialogueID[53] = "Plato malo 4";
 
     }
 
