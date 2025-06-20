@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: f2e6c113226c9277596dc08c6c45b1b6
+guid: 0a8e1d53b52bc62c4bc7927ec50f7f60
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -97,13 +97,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: smartphone-diaceroba_0
+      name: idle_right_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 156
-        height: 256
+        width: 28
+        height: 39
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -111,20 +111,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 4f381d8fc61bea2ad8c9f65b2808f3c8
-      internalID: 1882137507
+      spriteID: eb87e2cc9d17016da923f322cbf821d9
+      internalID: -250373015
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: smartphone-diaceroba_1
+      name: idle_right_1
       rect:
         serializedVersion: 2
-        x: 156
+        x: 28
         y: 0
-        width: 156
-        height: 256
+        width: 28
+        height: 39
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -132,8 +132,50 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 2dc7588ff77977f28afe736ec785c769
-      internalID: -471181991
+      spriteID: 82ff642200cdd87798d9bfca5088d95a
+      internalID: -131085080
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: idle_right_2
+      rect:
+        serializedVersion: 2
+        x: 56
+        y: 0
+        width: 28
+        height: 39
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 12c9730bbfb3349af8ae229decc86b09
+      internalID: -920395181
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: idle_right_3
+      rect:
+        serializedVersion: 2
+        x: 84
+        y: 0
+        width: 28
+        height: 39
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d6cdc6c98f0b04c2da75ef2e0c76a06c
+      internalID: -1414561264
       vertices: []
       indices: 
       edges: []
@@ -149,8 +191,10 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      smartphone-diaceroba_0: 1882137507
-      smartphone-diaceroba_1: -471181991
+      idle_right_0: -250373015
+      idle_right_1: -131085080
+      idle_right_2: -920395181
+      idle_right_3: -1414561264
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

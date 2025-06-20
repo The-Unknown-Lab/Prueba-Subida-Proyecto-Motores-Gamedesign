@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: f2e6c113226c9277596dc08c6c45b1b6
+guid: acc89dcb06f008b18be12e7b88d6e2e0
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -95,49 +95,7 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites:
-    - serializedVersion: 2
-      name: smartphone-diaceroba_0
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 0
-        width: 156
-        height: 256
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 4f381d8fc61bea2ad8c9f65b2808f3c8
-      internalID: 1882137507
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: smartphone-diaceroba_1
-      rect:
-        serializedVersion: 2
-        x: 156
-        y: 0
-        width: 156
-        height: 256
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 2dc7588ff77977f28afe736ec785c769
-      internalID: -471181991
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
+    sprites: []
     outline: []
     physicsShape: []
     bones: []
@@ -148,9 +106,7 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable:
-      smartphone-diaceroba_0: 1882137507
-      smartphone-diaceroba_1: -471181991
+    nameFileIdTable: {}
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
