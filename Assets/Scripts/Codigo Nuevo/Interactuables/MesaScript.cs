@@ -59,9 +59,9 @@ public class MesaScript : MonoBehaviour, IInteractuable
 
         }
 
-
         ContarItems();
         ActualizarTexto();
+        MinigameOne.Instance.CheckMinigameStatus(false);
 
     }
 
@@ -77,6 +77,7 @@ public class MesaScript : MonoBehaviour, IInteractuable
             m_Camera.Follow = player.transform;
             m_Camera.m_Lens.OrthographicSize = 5f;
             DialogueManager.Instance.CanMoveNotify2(true);
+            MinigameOne.Instance.CheckMinigameStatus(true);
         }
 
         //Funcion para dejar el plato en la mesa
