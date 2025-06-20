@@ -13,13 +13,12 @@ public class VinosScript : MonoBehaviour, IInteractuable
 
     public void PressButton(int id)
     {
-        if (id == 4)
+        if (id == 36)
         {
             DialogueManager.Instance.CanMoveNotify2(true);
             vinosUI.SetActive(false);
         }
-        //else
-            //MinigameOne.Instance.gameObject.GetComponent<V2NewNpcDialogue1>().OnInteract(gameObject.GetComponent<IDialogue>(), id);
-
+        else
+            DialogueManager.Instance.gameObject.GetComponent<DialoguesManager>().OnInteract(DialogueManager.Instance.gameObject.GetComponent<IDialogue>(), new int[] { id }, "Protagonista");
     }
 }

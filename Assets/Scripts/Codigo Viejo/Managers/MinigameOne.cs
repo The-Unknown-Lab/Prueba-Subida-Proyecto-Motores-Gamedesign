@@ -17,6 +17,8 @@ public class MinigameOne : MonoBehaviour
     [SerializeField] private GameObject platoEnManoObject;
     [SerializeField] private GameObject[] Npcs;
     [SerializeField] private CinemachineVirtualCamera m_Camera;
+    [SerializeField] private GameObject roundButton, levelExit;
+    [SerializeField] private GameObject triggerSecondRound;
 
     [SerializeField] private int platoEnManoID;
     [SerializeField] private int foodInTables;
@@ -53,11 +55,6 @@ public class MinigameOne : MonoBehaviour
 
         gameStage = 0;
         DialogueManager.Instance.gameObject.GetComponent<DialoguesManager>().OnInteract(DialogueManager.Instance.gameObject.GetComponent<IDialogue>(), new int[] {0,1}, "Voz Misteriosa");
-    }
-
-    private void Update()
-    {
-        CheckMinigameStatus();
     }
 
 
@@ -109,44 +106,54 @@ public class MinigameOne : MonoBehaviour
         return id;
     }
 
-    private void CheckMinigameStatus()
+    public void CheckMinigameStatus(bool button)
     {
-        if (foodInTables == foodPlaces.Count && gameStage < 2)
+        if (foodInTables == foodPlaces.Count && gameStage < 2 && button)
         {
-            if (Input.GetKeyDown(KeyCode.O))
-            {
-                Debug.Log("Primera parte del minijuego Terminado");
-                finishedCorrutines = 0;
-                totalCorrutines = 0;
-                float val = 0;
-
-
-                for (int i = 0; i < foodPlaces.Count; i++)
-                {
-                    if (foodPlaces[i] == 1)
-                    {
-                        StartCoroutine(PlayAnimation(Npcs[i], "NpcEat", val));
-                        val += 3f;
-                        totalCorrutines++;
-                    }
-                    else if (foodPlaces[i] == 2)
-                    {
-                        if (i == 2)
-                        {
-                            mesaObj[i].GetComponent<MesaScript>().lugares.Remove(mesaObj[i].GetComponent<MesaScript>().lugares[0]);
-                        }
-                        else
-                            mesaObj[1].GetComponent<MesaScript>().lugares.Remove(mesaObj[1].GetComponent<MesaScript>().lugares[i]);
-                        StartCoroutine(PlayAnimation(Npcs[i], "NpcDeath", val));
-                        val += 3f;
-                        totalCorrutines++;
-                        foodPlaces[i] = 3;
-                    }
-
-                }
-                gameStage++;
-            }
+            if (roundButton.activeSelf == false)
+                roundButton.SetActive(true);
         }
+        else
+        {
+            if (roundButton.activeSelf == true)
+                roundButton.SetActive(false);
+        }
+    }
+
+    public void EndRound()
+    {
+        roundButton.SetActive(false);
+        Debug.Log("Primera parte del minijuego Terminado");
+        finishedCorrutines = 0;
+        totalCorrutines = 0;
+        float val = 0;
+
+
+        for (int i = 0; i < foodPlaces.Count; i++)
+        {
+            if (foodPlaces[i] == 1)
+            {
+                StartCoroutine(PlayAnimation(Npcs[i], "NpcEat", val));
+                val += 3f;
+                totalCorrutines++;
+            }
+            else if (foodPlaces[i] == 2)
+            {
+                if (i == 2)
+                {
+                    mesaObj[i].GetComponent<MesaScript>().lugares.Remove(mesaObj[i].GetComponent<MesaScript>().lugares[0]);
+                }
+                else
+                    mesaObj[1].GetComponent<MesaScript>().lugares.Remove(mesaObj[1].GetComponent<MesaScript>().lugares[i]);
+                StartCoroutine(PlayAnimation(Npcs[i], "NpcDeath", val));
+                val += 3f;
+                totalCorrutines++;
+                foodPlaces[i] = 3;
+            }
+
+        }
+        gameStage++;
+
     }
 
     private IEnumerator PlayAnimation(GameObject Npc, string animName, float time)
@@ -220,13 +227,15 @@ public class MinigameOne : MonoBehaviour
         }
         if (gameStage < 2)
         {
-            DialogueManager.Instance.gameObject.GetComponent<DialoguesManager>().OnInteract(DialogueManager.Instance.gameObject.GetComponent<IDialogue>(), new int[] { deathId }, null);
-            //Pasa a la siguiente ronda sin importar el deathId
+            //Pasa a la siguiente ronda
+            DialogueManager.Instance.gameObject.GetComponent<DialoguesManager>().OnInteract(DialogueManager.Instance.gameObject.GetComponent<IDialogue>(), new int[] { deathId, 3}, "Voz Misteriosa");
+            triggerSecondRound.SetActive(true);
         }
         else
         {
-            DialogueManager.Instance.gameObject.GetComponent<DialoguesManager>().OnInteract(DialogueManager.Instance.gameObject.GetComponent<IDialogue>(), new int[] { 3, 5, deathId + 4 }, null);
-            //Codigo para salir al Hub dependiendo del deathId que se devuelva
+            //Codigo de cuando haya sido la ultima ronda
+            DialogueManager.Instance.gameObject.GetComponent<DialoguesManager>().OnInteract(DialogueManager.Instance.gameObject.GetComponent<IDialogue>(), new int[] { deathId + 4 }, "Voz Misteriosa");
+            levelExit.SetActive(true);
         }
 
 
