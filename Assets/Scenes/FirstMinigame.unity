@@ -154,7 +154,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   NpcName: Npc 2
-  dialogueIndex: 000000000300000005000000
+  dialogueIndex: 290000002a0000002b000000
 --- !u!61 &6788560
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -2623,7 +2623,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   NpcName: Npc 1
-  dialogueIndex: 000000000300000005000000
+  dialogueIndex: 290000002a0000002b000000
 --- !u!95 &283602785
 Animator:
   serializedVersion: 5
@@ -7983,7 +7983,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   NpcName: Npc 3
-  dialogueIndex: 000000000300000005000000
+  dialogueIndex: 290000002a0000002c000000
 --- !u!61 &1116604005
 BoxCollider2D:
   m_ObjectHideFlags: 0
